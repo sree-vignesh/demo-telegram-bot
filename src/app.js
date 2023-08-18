@@ -22,6 +22,12 @@ bot.onText(/\/idp (.+)/, (msg, match) => {
 });
 */
 //bot.onText()
+bot.on("text", (msg, match) => {
+  const chatId = msg.chat.id;
+  const resp = match[1]; // the captured "whatever"
+  console.log(resp);
+  bot.sendMessage(chatId, resp);
+});
 bot.onText(/\/echo (.+)/, (msg, match) => {
   // 'msg' is the received Message from Telegram
   // 'match' is the result of executing the regexp above on the text content
