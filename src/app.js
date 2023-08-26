@@ -42,9 +42,19 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
 });
-bot.onText(/\/aad/, (msg) => {
-  bot.sendDocument(msg.chat.id, "/home/vicky/Downloads/aad.pdf");
+bot.on("document", (msg, match) => {
+  bot.getFile(msg.document.file_id).then((resp) => {
+    console.log(resp);
+  });
 });
+bot.onText(/\/aad/, (msg) => {
+  bot.sendDocument(
+    msg.chat.id,
+
+    "BQACAgUAAxkBAAIBemToz1chq8dqwMIKg_5PpmdWamncAALZCgACc2pJV4rClVgMCmBkMAQ"
+  );
+});
+//bot.on("document");
 bot.onText(/\/tc1/, (msg) => {
   bot.sendPhoto(
     msg.chat.id,
