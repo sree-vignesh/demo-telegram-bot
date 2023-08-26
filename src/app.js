@@ -13,23 +13,7 @@ const bot = new TelegramBot(token, {
 const URLs = [];
 const URLLabels = [];
 let tempSiteURL = "";
-/*
-bot.onText(/\/idp (.+)/, (msg, match) => {
-  const rno = match[1];
-  //bot.sendMessage(msg.chat.id, "helo");
-  console.log(`${url}` + rno + `${url2}`);
-  bot.sendPhoto(msg.chat.id, `${url}` + rno + `${url2}`);
-});
-*/
-//bot.onText()
-/*
-bot.on("text", (msg, match) => {
-  const chatId = msg.chat.id;
-  //const resp = match[1]; // the captured "whatever"
-  console.log(msg.text);
-  bot.sendPhoto(chatId, `${url}` + msg.text + `${url2}`);
-});
-*/
+
 bot.onText(/\/echo (.+)/, (msg, match) => {
   // 'msg' is the received Message from Telegram
   // 'match' is the result of executing the regexp above on the text content
@@ -62,10 +46,7 @@ bot.onText(/\/tc1/, (msg) => {
   );
   console.log(msg);
 });
-/*bot.onText(/\/repeat/, (msg, match) => {
-  const resp = match[1];
-  bot.sendMessage(msg.chat.id, resp);
-});*/
+
 // Listener (handler) for telegram's /bookmark event
 bot.onText(/\/bookmark/, (msg, match) => {
   const chatId = msg.chat.id;
